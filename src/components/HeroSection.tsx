@@ -75,21 +75,13 @@ const HeroSection = () => {
 
           {/* Hero Image */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 group">
+            <div className="relative overflow-hidden transition-all duration-500 group">
               <img 
                 src={heroImage} 
                 alt="Professional pump systems and engineering" 
-                className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700 rounded-lg"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
-              
-              {/* Floating Stats */}
-              <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-orange-600">2 YR</div>
-                  <div className="text-sm text-gray-600">WARRANTY</div>
-                </div>
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 to-transparent"></div>
               
               <div className="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
                 <div className="text-center">

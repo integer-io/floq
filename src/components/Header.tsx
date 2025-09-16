@@ -58,6 +58,20 @@ const Header = () => {
                 Contact
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full [&.active]:w-full"></span>
               </Link>
+              <Link
+                to="/careers"
+                className="text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 relative group [&.active]:text-orange-500 [&.active]:font-bold"
+              >
+                Careers
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full [&.active]:w-full"></span>
+              </Link>
+              <Link
+                to="/testimonials"
+                className="text-gray-700 hover:text-orange-500 font-medium transition-all duration-300 relative group [&.active]:text-orange-500 [&.active]:font-bold"
+              >
+                Testimonials
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-orange-500 transition-all duration-300 group-hover:w-full [&.active]:w-full"></span>
+              </Link>
             </nav>
 
             {/* CTA Button */}
@@ -121,6 +135,20 @@ const Header = () => {
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Contact
+                </Link>
+                <Link
+                  to="/careers"
+                  className="text-gray-700 hover:text-orange-500 font-medium transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Careers
+                </Link>
+                <Link
+                  to="/testimonials"
+                  className="text-gray-700 hover:text-orange-500 font-medium transition-colors duration-300"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Testimonials
                 </Link>
                 <Link
                   to="/contact"

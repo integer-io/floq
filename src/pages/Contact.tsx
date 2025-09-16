@@ -306,17 +306,88 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="bg-card p-6 rounded-lg shadow">
                 <h3 className="font-bold text-foreground mb-2">How can we help with your business?</h3>
-                <p className="text-muted-foreground">We provide comprehensive pumping solutions with 2-year warranty tailored to your specific industry needs, from consultation to installation and after-sales support.</p>
+                <p className="text-muted-foreground">We provide comprehensive pumping solutions tailored to your specific industry needs, from consultation to installation and after-sales support.</p>
               </div>
               
               <div className="bg-card p-6 rounded-lg shadow">
                 <h3 className="font-bold text-foreground mb-2">What are the advantages of working with FloQ?</h3>
-                <p className="text-muted-foreground">Our advantages include 9+ years of experience, ISO 9001 certification, worldwide export capabilities, 24/7 support, 2-year warranty, and custom-engineered solutions.</p>
+                <p className="text-muted-foreground">Our advantages include 9+ years of experience, ISO 9001 certification, worldwide export capabilities, 24/7 support, and custom-engineered solutions.</p>
               </div>
               
               <div className="bg-card p-6 rounded-lg shadow">
                 <h3 className="font-bold text-foreground mb-2">How does the working process work?</h3>
-                <p className="text-muted-foreground">Our process includes initial consultation, application analysis, custom design if needed, manufacturing, quality testing, installation support, 2-year warranty activation, and ongoing maintenance services.</p>
+                <p className="text-muted-foreground">Our process includes initial consultation, application analysis, custom design if needed, manufacturing, quality testing, installation support, and ongoing maintenance services.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Location Details Section */}
+        <section className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-3xl font-bold text-center text-foreground mb-12">
+              Our <span className="text-orange-500">Locations</span>
+            </h2>
+            
+            {/* Chennai Location */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <h3 className="text-2xl font-bold text-foreground">Chennai Office</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="w-6 h-6 text-orange-500 mt-1" />
+                    <div>
+                      <p className="font-medium text-foreground">Address:</p>
+                      <p className="text-muted-foreground">Office: No.519/2, Srinivasapillai Nagar,</p>
+                      <p className="text-muted-foreground">Ayanambakkam, Chennai-600095</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-orange-500" />
+                    <p className="text-muted-foreground">8072372485</p>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-orange-500" />
+                    <p className="text-muted-foreground">export@floqpump.com</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-gradient-to-br from-blue-50 to-orange-50 p-8 rounded-lg">
+                <div className="w-full h-64 bg-blue-200 rounded-lg flex items-center justify-center">
+                  <p className="text-blue-600 font-medium">Chennai Office Image</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Kerala Location */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="bg-gradient-to-br from-orange-50 to-blue-50 p-8 rounded-lg order-2 lg:order-1">
+                <div className="w-full h-64 bg-orange-200 rounded-lg flex items-center justify-center">
+                  <p className="text-orange-600 font-medium">Kerala Office Image</p>
+                </div>
+              </div>
+              <div className="space-y-6 order-1 lg:order-2">
+                <h3 className="text-2xl font-bold text-foreground">Kerala Office (Registered)</h3>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <MapPin className="w-6 h-6 text-orange-500 mt-1" />
+                    <div>
+                      <p className="font-medium text-foreground">Address:</p>
+                      <p className="text-muted-foreground">Building No 7/287, Saud building,</p>
+                      <p className="text-muted-foreground">Kozhikode- Palakkad National Highway,</p>
+                      <p className="text-muted-foreground">Nearby Hyundai car showroom,</p>
+                      <p className="text-muted-foreground">Kumaramputhur, Palakkad, Kerala, 678583</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-orange-500" />
+                    <p className="text-muted-foreground">7358755442</p>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-orange-500" />
+                    <p className="text-muted-foreground">export@floqpump.com</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
