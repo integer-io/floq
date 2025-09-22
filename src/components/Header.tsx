@@ -1,10 +1,13 @@
 import React from 'react';
+import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import floqLogo from '@/assets/floq-logo.png';
+import QuoteModal from './QuoteModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
   return (
     <>
@@ -76,12 +79,12 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Link
-                to="/contact"
+              <button
+                onClick={() => setIsQuoteModalOpen(true)}
                 className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:from-orange-600 hover:to-orange-700 transform hover:scale-105 transition-all duration-300 shadow-lg"
               >
                 Get Quote
-              </Link>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -151,9 +154,12 @@ const Header = () => {
                   Testimonials
                 </Link>
                 <Link
-                  to="/contact"
+                  to="#"
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsQuoteModalOpen(true);
+                  }}
                   className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-2 rounded-lg font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-300 shadow-lg w-full text-center"
-                  onClick={() => setIsMenuOpen(false)}
                 >
                   Get Quote
                 </Link>
@@ -162,6 +168,11 @@ const Header = () => {
           )}
         </div>
       </header>
+      
+      <QuoteModal 
+        isOpen={isQuoteModalOpen} 
+        onClose={() => setIsQuoteModalOpen(false)} 
+      />
     </>
   );
 };

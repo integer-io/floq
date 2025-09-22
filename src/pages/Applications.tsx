@@ -5,51 +5,27 @@ const Applications = () => {
   const industries = [
     {
       name: "Ceramic Industry",
-      image: "/api/placeholder/300/200"
+      image: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
     {
       name: "Marine Feed Industry", 
-      image: "/api/placeholder/300/200"
+      image: "https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
     {
       name: "Oil & Gas Industry",
-      image: "/api/placeholder/300/200"
+      image: "https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
     {
       name: "Paper Industry",
-      image: "/api/placeholder/300/200"
+      image: "https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
     {
       name: "Starch Manufacturing Plants",
-      image: "/api/placeholder/300/200"
+      image: "https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=400"
     },
     {
       name: "Paint, Varnish & Ink Industry",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      name: "Breweries Industry",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      name: "Man Made Fibers Industry",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      name: "Chemical Industry",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      name: "Fertilizers Industry",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      name: "Food Processing Industry",
-      image: "/api/placeholder/300/200"
-    },
-    {
-      name: "Pharmaceutical Industry",
-      image: "/api/placeholder/300/200"
+      image: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400"
     }
   ];
 
@@ -83,18 +59,15 @@ const Applications = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {industries.map((industry, index) => (
                 <div key={index} className="bg-card rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                  <div className="relative h-48 bg-gradient-to-br from-orange-500/20 to-blue-500/20 flex items-center justify-center">
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                    <h3 className="relative z-10 text-white font-bold text-center px-4 text-lg">
-                      {industry.name}
-                    </h3>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-muted-foreground text-sm">
-                      Specialized pump solutions with 2-year warranty designed for {industry.name.toLowerCase()} applications with optimal performance and reliability.
-                    </p>
-                    <div className="mt-4 flex items-center text-orange-500 text-sm font-medium group-hover:text-orange-600 transition-colors">
-                      Learn More →
+                  <div className="relative h-48 overflow-hidden">
+                    <img 
+                      src={industry.image || `https://images.pexels.com/photos/${1000000 + index}/pexels-photo-${1000000 + index}.jpeg?auto=compress&cs=tinysrgb&w=400`}
+                      alt={industry.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <h3 className="text-white font-bold text-lg">{industry.name}</h3>
                     </div>
                   </div>
                 </div>

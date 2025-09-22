@@ -1,7 +1,35 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Settings, Zap, Droplets } from "lucide-react";
 
 const Products = () => {
+  const applications = [
+    {
+      title: "Construction",
+      image: "https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-162539.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+      title: "Agriculture", 
+      image: "https://images.pexels.com/photos/974314/pexels-photo-974314.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+      title: "Industrial",
+      image: "https://images.pexels.com/photos/236705/pexels-photo-236705.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+      title: "Marine",
+      image: "https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+      title: "Mining",
+      image: "https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400"
+    },
+    {
+      title: "Water Treatment",
+      image: "https://images.pexels.com/photos/416978/pexels-photo-416978.jpeg?auto=compress&cs=tinysrgb&w=400"
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -24,37 +52,161 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Product Description */}
+        {/* Product Hero Image */}
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">
-                  Built for <span className="text-orange-500">Tough Conditions</span>
-                </h2>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="relative">
+                <img 
+                  src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                  alt="Auto Priming Dewatering Pump" 
+                  className="w-full h-[500px] object-cover rounded-lg shadow-lg"
+                />
+                <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg p-4">
+                  <img 
+                    src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=200" 
+                    alt="Pump thumbnail" 
+                    className="w-16 h-16 object-cover rounded"
+                  />
+                </div>
+              </div>
+              
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold text-foreground">Auto Priming Dewatering Pump</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Auto Priming Dewatering Pumps Suppliers and Manufacturers in India. Our Auto-priming dewatering 
+                  pumps offer simple, reliable operation and easy maintenance. Our dewatering systems are fully automatic 
+                  priming pumps that can run dry for extended periods. These pumps are suitable for nearly all dewatering 
+                  application, especially in well point dewatering, straight dewatering and sewer-by-pass applications.
+                </p>
                 
-                <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg mb-6">
-                  <h3 className="text-xl font-bold mb-2">🛡️ 2 YEARS COMPREHENSIVE WARRANTY</h3>
-                  <p className="text-orange-100">Every FloQ pump comes with industry-leading 2-year warranty covering all components and performance.</p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:from-orange-600 hover:to-orange-700 transition-all duration-300 flex items-center justify-center">
+                    <span className="mr-2">👤</span>
+                    ENQUIRE NOW
+                  </button>
+                  <button className="border-2 border-orange-500 text-orange-500 px-6 py-3 rounded-lg font-medium hover:bg-orange-500 hover:text-white transition-all duration-300 flex items-center justify-center">
+                    <span className="mr-2">⬇</span>
+                    DOWNLOAD BROCHURE
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Operating Range & Design Features */}
+        <section className="py-16 px-4 bg-muted/30">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Operating Range */}
+              <div className="bg-card p-8 rounded-lg shadow-lg">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center">
+                    <Settings className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">OPERATING RANGE</h3>
                 </div>
                 
-                <p className="text-muted-foreground mb-6">
-                  FloQ Pumps with 2-year warranty are built to work hard in tough conditions. They are easy to move, easy to use, and easy to maintain. Used in construction, utilities, civil engineering, mining, and flood control, FloQ pumps give you steady performance with less downtime.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  From general dewatering to sludge, trash, and high-head pumping, FloQ has the right pump for your job with complete warranty protection. If you want pumps that are strong, simple, and ready to perform – FloQ is the right choice.
-                </p>
-                <p className="text-muted-foreground">
-                  Whether it's clear water, sludge, chemicals, or high temperature fluids – FLOQ has the right pump for every application with 2-year warranty coverage.
-                </p>
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="font-bold text-foreground mb-2">Delivery Size:</h4>
+                    <p className="text-muted-foreground">DN 50 to 300 mm</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-foreground mb-2">Capacity:</h4>
+                    <p className="text-muted-foreground">Up to 2600 m³/hr</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-foreground mb-2">Head:</h4>
+                    <p className="text-muted-foreground">Up to 70 m</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-bold text-foreground mb-2">Temperature:</h4>
+                    <p className="text-muted-foreground">Up to 100° C</p>
+                  </div>
+                </div>
               </div>
+
+              {/* Design Features */}
               <div className="bg-card p-8 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-bold text-center text-foreground mb-6">
-                  FOR 8 INCH MODEL <span className="text-orange-500">FLOQ–DW250</span>
-                </h3>
-                <p className="text-center text-muted-foreground">
-                  FLOQ pumps with 2-year warranty are known for their reliability, high efficiency, and rugged construction
-                </p>
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center">
+                    <Zap className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">DESIGN FEATURES</h3>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <span className="text-muted-foreground">Light weight & Durable</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <span className="text-muted-foreground">Trolley mounted mobile type</span>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                    <span className="text-muted-foreground">Auto-priming design</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Applications */}
+        <section className="py-16 px-4">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-4 mb-6">
+                <div className="w-16 h-16 bg-orange-500 rounded-lg flex items-center justify-center">
+                  <Droplets className="w-8 h-8 text-white" />
+                </div>
+                <h2 className="text-3xl font-bold text-foreground">APPLICATIONS</h2>
+              </div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {applications.map((app, index) => (
+                <div key={index} className="group cursor-pointer">
+                  <div className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+                    <img 
+                      src={app.image} 
+                      alt={app.title}
+                      className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4">
+                      <h3 className="text-white font-bold text-xl">{app.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-12 text-center">
+              <div className="space-y-4">
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-muted-foreground">Dewatering in Construction pits</span>
+                </div>
+                
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-muted-foreground">Used in water transfer in quarries</span>
+                </div>
+                
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-muted-foreground">In Agriculture for Dewatering water</span>
+                </div>
               </div>
             </div>
           </div>
@@ -177,79 +329,8 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Applications Section */}
-        <section className="py-16 px-4">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-foreground mb-12">
-              Emergency <span className="text-orange-500">Applications</span>
-            </h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-lg font-bold text-orange-500 mb-3">Oil & Gas</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Ballasting</li>
-                  <li>• Pipeline Hydrostatic Test</li>
-                  <li>• Drilling</li>
-                  <li>• Pipeline Flushing</li>
-                </ul>
-              </div>
-
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-lg font-bold text-orange-500 mb-3">Mining & Quarry</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Open Pit</li>
-                  <li>• Underground Mines</li>
-                  <li>• Mine dewatering</li>
-                  <li>• Quarry operations</li>
-                </ul>
-              </div>
-
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-lg font-bold text-orange-500 mb-3">Civil Work</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Sump water removal</li>
-                  <li>• Dewatering</li>
-                  <li>• General construction</li>
-                  <li>• Site drainage</li>
-                </ul>
-              </div>
-
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-lg font-bold text-orange-500 mb-3">Municipalities</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Sewage Bypass</li>
-                  <li>• Dewatering</li>
-                  <li>• Emergency Water Treatment</li>
-                  <li>• Municipal services</li>
-                </ul>
-              </div>
-
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-lg font-bold text-orange-500 mb-3">Flood Control</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Emergency Application</li>
-                  <li>• Flood controls</li>
-                  <li>• Emergency drainage</li>
-                  <li>• Water management</li>
-                </ul>
-              </div>
-
-              <div className="bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
-                <h3 className="text-lg font-bold text-orange-500 mb-3">Rental Industry</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Effluent Handling</li>
-                  <li>• Waste Drainage</li>
-                  <li>• Temporary Firefighting</li>
-                  <li>• Equipment rental</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Spare Parts Section */}
-        <section className="py-16 px-4 bg-muted/30">
+        <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="bg-card p-8 rounded-lg shadow-lg">
               <div className="bg-orange-500 text-white p-4 rounded-lg mb-6">

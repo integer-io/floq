@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Star, Quote, User, Building, MapPin } from 'lucide-react';
+import { Star, Quote, User, Building, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Testimonials = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+
   const testimonials = [
     {
       name: "Rajesh Kumar",
@@ -40,6 +43,24 @@ const Testimonials = () => {
       rating: 5,
       text: "FloQ's after-sales support is remarkable. They provide prompt service and their maintenance team is highly skilled. We've had zero downtime issues since installation.",
       image: "/api/placeholder/80/80"
+    },
+    {
+      name: "Arjun Reddy",
+      position: "Technical Manager",
+      company: "Industrial Solutions",
+      location: "Hyderabad",
+      rating: 5,
+      text: "Outstanding pump performance and excellent customer service. FloQ has exceeded our expectations in every aspect of their service delivery.",
+      image: "/api/placeholder/80/80"
+    },
+    {
+      name: "Kavitha Nair",
+      position: "Production Head",
+      company: "Marine Industries",
+      location: "Kochi",
+      rating: 5,
+      text: "The reliability and efficiency of FloQ pumps have significantly improved our operational productivity. Highly recommended for industrial applications.",
+      image: "/api/placeholder/80/80"
     }
   ];
 
@@ -49,6 +70,31 @@ const Testimonials = () => {
     { number: "50+", label: "Cities Served", icon: MapPin },
     { number: "9+", label: "Years Experience", icon: Star }
   ];
+
+  // Auto-play functionality
+  useEffect(() => {
+    if (isAutoPlaying) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [isAutoPlaying, testimonials.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    setIsAutoPlaying(false);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsAutoPlaying(false);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+  };
 
   return (
     <div className="min-h-screen">
@@ -87,47 +133,101 @@ const Testimonials = () => {
           </div>
         </section>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Carousel */}
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-foreground mb-12">
               Client <span className="text-orange-500">Success Stories</span>
             </h2>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-card p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 relative group">
-                  <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
-                    <Quote className="w-12 h-12 text-orange-500" />
-                  </div>
-                  
-                  <div className="flex items-center mb-6">
-                    <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center mr-4">
-                      <User className="w-8 h-8 text-white" />
+            <div className="relative">
+              {/* Carousel Container */}
+              <div className="overflow-hidden rounded-lg">
+                <div 
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                  {testimonials.map((testimonial, index) => (
+                    <div key={index} className="w-full flex-shrink-0 px-4">
+                      <div className="bg-card p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 relative group max-w-4xl mx-auto">
+                        <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
+                          <Quote className="w-12 h-12 text-orange-500" />
+                        </div>
+                        
+                        <div className="flex flex-col md:flex-row items-center gap-8">
+                          <div className="flex-shrink-0">
+                            <div className="w-24 h-24 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full flex items-center justify-center">
+                              <User className="w-12 h-12 text-white" />
+                            </div>
+                          </div>
+                          
+                          <div className="flex-1 text-center md:text-left">
+                            <div className="flex justify-center md:justify-start mb-4">
+                              {[...Array(testimonial.rating)].map((_, i) => (
+                                <Star key={i} className="w-6 h-6 text-yellow-400 fill-current animate-pulse" style={{animationDelay: `${i * 0.1}s`}} />
+                              ))}
+                            </div>
+                            
+                            <p className="text-muted-foreground leading-relaxed mb-6 italic text-lg">
+                              "{testimonial.text}"
+                            </p>
+                            
+                            <div className="space-y-2">
+                              <h3 className="font-bold text-foreground text-xl">{testimonial.name}</h3>
+                              <p className="text-muted-foreground">{testimonial.position}</p>
+                              <p className="text-orange-600 font-medium">{testimonial.company}</p>
+                              <div className="flex items-center justify-center md:justify-start text-sm text-muted-foreground">
+                                <MapPin className="w-4 h-4 mr-1 text-orange-500" />
+                                {testimonial.location}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-bold text-foreground text-lg">{testimonial.name}</h3>
-                      <p className="text-muted-foreground">{testimonial.position}</p>
-                      <p className="text-sm text-orange-600 font-medium">{testimonial.company}</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current animate-pulse" style={{animationDelay: `${i * 0.1}s`}} />
-                    ))}
-                  </div>
-                  
-                  <p className="text-muted-foreground leading-relaxed mb-4 italic">
-                    "{testimonial.text}"
-                  </p>
-                  
-                  <div className="flex items-center text-sm text-muted-foreground">
-                    <MapPin className="w-4 h-4 mr-1 text-orange-500" />
-                    {testimonial.location}
-                  </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-orange-500 hover:text-white transition-all duration-300 z-10"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-orange-500 hover:text-white transition-all duration-300 z-10"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Dots Indicator */}
+              <div className="flex justify-center mt-8 space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentSlide 
+                        ? 'bg-orange-500 w-8' 
+                        : 'bg-gray-300 hover:bg-orange-300'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              {/* Auto-play Control */}
+              <div className="text-center mt-4">
+                <button
+                  onClick={() => setIsAutoPlaying(!isAutoPlaying)}
+                  className="text-sm text-muted-foreground hover:text-orange-500 transition-colors"
+                >
+                  {isAutoPlaying ? 'Pause Auto-play' : 'Resume Auto-play'}
+                </button>
+              </div>
             </div>
           </div>
         </section>

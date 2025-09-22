@@ -58,6 +58,7 @@ const HeroSection = () => {
               <Button 
                 size="lg" 
                 className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-lg font-semibold"
+                onClick={() => window.location.href = '/products'}
               >
                 View All Products
                 <ArrowUpRight className="ml-2 h-5 w-5" />
@@ -66,6 +67,7 @@ const HeroSection = () => {
                 variant="outline" 
                 size="lg" 
                 className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-6 text-lg font-semibold transition-all duration-300"
+                onClick={() => window.location.href = '/contact'}
               >
                 <Play className="mr-2 h-5 w-5" />
                 Get In Touch
